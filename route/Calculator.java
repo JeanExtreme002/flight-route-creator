@@ -3,10 +3,6 @@ package route;
 public class Calculator {
     public static final double radiusOfEarth = 6378.137 * 1000; // Radius in meters.
 
-    public static final double toDegrees(double radians) {
-        return radians * (180 / Math.PI);
-    }
-
     /**
     * Returns the distance in nautical miles.
     */
@@ -44,6 +40,6 @@ public class Calculator {
         double x = Math.cos(lat2) * Math.sin(longDistance);
         double y = Math.cos(lat1) * Math.sin(lat2) - Math.sin(lat1) * Math.cos(lat2) * Math.cos(longDistance);
 
-        return (Calculator.toDegrees(Math.atan2(x, y)) + 360) % 360;
+        return (Math.toDegrees(Math.atan2(x, y)) + 360) % 360;
     }
 }
